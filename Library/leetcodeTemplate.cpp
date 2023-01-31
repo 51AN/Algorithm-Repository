@@ -12,61 +12,16 @@
 #define YES                                              cout<<"YES"<<endl
 #define NO                                               cout<<"NO"<<endl
 
-
 using namespace std;
 
+//write funciton here
 
-void dfs(int node,vector<int> &visited,vector<int> adjList[]){
-              visited[node]=1;              
-            for(auto it : adjList[node]){
-                if(visited[it]!=1){
-                    visited[it]=1;
-                    visited.push_back(it);
-                    dfs(it,visited,adjList);
-                }
-            }
-    }
+
 
 int main(){
-
     fastIO;
-    int n;
-    cin>>n;
-    int a[n][n];
 
-    f(i,n){
-        f(j,n){
-            cin>>a[i][j];
-        }
-    }
-
-    vector<int> adjList[n];
-
-    f(i,n){
-        f(j,n){
-            if((a[i][j] == 1) && (i != j)){
-                adjList[i].push_back(j);
-                adjList[j].push_back(i);
-            }
-            
-        }
-    }
-
-    vector<int>visited(n,0);
-    int province = 0;
-
-    f(i,n){
-        if(visited[i] != 1){
-            province++;
-            dfs(i,visited,adjList);
-        }
-    }
-
-    cout<<province<<nl;
-
-
-
+    
 
     re;
-
 }

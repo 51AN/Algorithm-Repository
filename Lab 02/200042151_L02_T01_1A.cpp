@@ -47,7 +47,7 @@ void bfs(int x,int y)
         {
             int xx = curr.x + knight_moves[i][0];
             int yy = curr.y + knight_moves[i][1];
-            if(chess[xx][yy]||xx<1||yy<1||xx>8||yy>8)//out of bounds don't check
+            if(chess[xx][yy]||xx<1||yy<1||xx>8||yy>8)//out of bounds and if matched don't check
                 continue;
             chess[xx][yy] = 1;//traversed
             nxt.x = xx;
