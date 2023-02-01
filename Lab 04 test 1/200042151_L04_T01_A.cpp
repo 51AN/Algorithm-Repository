@@ -85,8 +85,6 @@ int main()
 
     floydWarshal(n);
     findDistance(n, distance);
-    print(n);
-
     
     int min = INT_MAX;
     for(int i = 1 ; i<=n ; i++){
