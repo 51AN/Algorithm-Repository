@@ -33,7 +33,7 @@ void findDistance(int n, int *distance){
         for(j=1;j<=n;j++){
             if(graph[i][j] == INT_MAX)
             {
-                distance[i] = 0;
+                distance[i] = -1;
                 break;
             }
             else{
@@ -60,7 +60,7 @@ void findDistance(int n, int *distance){
 int main()
 {
     int i,j,m,n,u,v,w;
-    int distance[100] = {0};
+    int distance[100] = {-1};
 
     for(i=0;i<100;i++){
         for(j=0;j<100;j++){
@@ -78,7 +78,7 @@ int main()
     while(m--){
         cin>>u>>v>>w;
         graph[u][v]=w;
-        graph[v][u]=w;
+        graph[v][u]=w;//trying to make bi-directional
     }
 
 
@@ -87,11 +87,22 @@ int main()
     findDistance(n, distance);
     print(n);
 
-    for(int i = 0 ; i<n ; i++){
-        if(distance[i] != 0){
+    
+    int min = INT_MAX;
+    for(int i = 1 ; i<=n ; i++){
+        if(min>distance[i])
+            min = distance[i];
+    }
+
+    for(int i = 1 ; i<=n ; i++){
+        if(distance[i] == min ){
             cout<<i<< " ";
         }
+        // cout<<distance[i] <<" ";
     }
+
+
+    
 
 
 }
