@@ -1,0 +1,1 @@
+int coin[m];

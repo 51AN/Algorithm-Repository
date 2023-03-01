@@ -10,20 +10,8 @@ void  floydWarshal(int node)
         for(i=1;i<=node;i++){
             for(j=1;j<=node;j++){
                 graph[i][j]=min(graph[i][j], graph[i][k]+graph[k][j]);
-                // graph[j][i]=min(graph[i][j], graph[i][k]+graph[k][j]);
             }
         }
-    }
-}
-
-void print(int n)
-{
-    int i,j;
-    for(i=1;i<=n;i++){
-        for(j=1;j<=n;j++){
-            cout<<graph[i][j]<<" ";
-        }
-        cout<<endl;
     }
 }
 
@@ -42,19 +30,6 @@ void findDistance(int n, int *distance){
         }
         
     }
-
-    // for(i=1;i<=n;i++){
-    //     for(j=1;j<=n;j++){
-    //        if(graph[j][i] == INT_MAX){
-    //            distance[j] = 0;
-    //            break;
-    //        }
-    //        else{
-    //            distance[j] += graph[j][i];
-    //        }
-    //     }
-      
-    // }
 }
 
 int main()
@@ -78,7 +53,7 @@ int main()
     while(m--){
         cin>>u>>v>>w;
         graph[u][v]=w;
-        graph[v][u]=w;//trying to make bi-directional
+        graph[v][u]=w;//make bi-directional
     }
 
 
@@ -89,12 +64,12 @@ int main()
     int min = INT_MAX;
     for(int i = 1 ; i<=n ; i++){
         if(min>distance[i])
-            min = distance[i];
+            min = distance[i];//find out minimum distance
     }
 
     for(int i = 1 ; i<=n ; i++){
         if(distance[i] == min ){
-            cout<<i<< " ";
+            cout<<i<< " ";//print indexes with minimum distance
         }
         // cout<<distance[i] <<" ";
     }

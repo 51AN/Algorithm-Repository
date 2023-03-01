@@ -33,12 +33,12 @@ int dfs(vector<vector<int>>& grid, int i, int j){
 int islandPerimeter(vector<vector<int>>& grid) {
         int n = grid.size();
         int m = grid[0].size();
-
+        memset(vis, 0, sizeof(vis));
         int parameter = 0;
 
         f(i,n){
             f(j,m){
-                if(grid[i][j] == 1){
+                if(grid[i][j] == 1 && vis[i][j] == 0){
                     parameter = dfs(grid, i , j);
                 }
             }
