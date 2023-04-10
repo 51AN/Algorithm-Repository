@@ -15,9 +15,9 @@ int turnOn(int N,int pos){
 }
 
 int bitMarriage(int mask, int k){
-    if(mask == (1<<n - 1))
+    if(mask == (1<<n) - 1)
         return 0;
-
+    maxim = 0;
     for(int i = 0; i<n; i++){
         if(!(isOn(mask,i))){
             maxim = max(bitMarriage(turnOn(mask, i), k +  1 ) + mat[k][i], maxim);
