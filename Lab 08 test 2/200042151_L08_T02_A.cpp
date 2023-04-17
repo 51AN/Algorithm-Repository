@@ -30,6 +30,8 @@ int turnOn(int N,int pos)
 int compatibleWays(int mask, int k){
     if(mask == (1<<n)-1) 
         return 1;
+    if(dp[mask][k] != -1)
+        return dp[mask][k];
     int total = 0;
     for(int i=0; i<n; i++)
     {
